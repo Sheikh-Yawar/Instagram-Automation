@@ -12,6 +12,8 @@ userName = input("Enter your instagram username: ")
 print("Enter your instagram password: ")
 password = getpass.getpass()
 
+search_username = input("Enter the username of the person: ")
+
 options = webdriver.ChromeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
 options.add_experimental_option('detach', True)
@@ -51,8 +53,6 @@ notifications_turnOff = driver.find_element(
 notifications_turnOff.click()
 
 
-print("Wolaa! You're logged in!")
-search_username = input("Enter the username of the person: ")
 os.mkdir(f'./Projects/instaAutomation/{search_username}')
 time.sleep(2)
 search_svg = driver.find_element(
